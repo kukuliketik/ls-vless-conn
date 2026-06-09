@@ -1,0 +1,10 @@
+services:
+  xray:
+    build: .
+    container_name: vless-reality
+    restart: unless-stopped
+    network_mode: "host"
+    env_file:
+      - .env
+    volumes:
+      - ./config.json:/usr/local/etc/xray/config.json:ro
